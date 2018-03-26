@@ -1,0 +1,53 @@
+header {
+  color: $white;
+  margin-bottom: 2em;
+& > h1 {
+  font-family:  $kaushan-script;
+  font-size: 3em;
+  text-shadow: -2px 0px $purple;
+  }
+& > p {
+    font-family: $dancing-script;
+    font-size: 1.5em;
+    text-shadow: -2px 0px $black;
+  }
+}
+
+form {
+  font-family: $helvetica-font-stack;
+}
+
+#name,
+#party {
+  height: 3rem;
+  font-family: $helvetica-font-stack;
+  text-align: center;
+  font-weight: $font-weight--bold;
+  margin-top: .5em;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
+}
+
+
+
+input::placeholder {
+  font-size: .5em;
+  text-align: center;
+  font-family: $helvetica-font-stack;
+  font-weight: $font-weight--medium;
+  vertical-align: middle;
+
+}
+
+h2 {
+  font-size: 1em;
+  font-weight: 600;
+
+}
+
+// input::placeholder {
+//   font-size: .5em;
+//   vertical-align:top;
+// }

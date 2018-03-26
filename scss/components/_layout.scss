@@ -1,0 +1,48 @@
+body {
+  background-color: #333333;
+}
+main {
+  @include flexy(flex, row, null, space-between) {
+    flex-wrap: wrap;
+  }
+}
+
+header {
+  text-align: center;
+  background-image: url("../images/newyork2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 43%;
+  height: 13em;
+  @include flexy(flex, column, null, center);
+  border-radius: 15px;
+}
+
+.new-guest {
+  border: 5px solid $purple;
+  border-radius: 15px;
+  background-color: lighten($purple, 35%);
+  padding: 2em;
+  font-family: $helvetica-font-stack;
+  text-align: center;
+  @extend %center;
+  margin-top: 2em;
+}
+
+input {
+  background-color: $white;
+}
+
+aside {
+  color: #fff;
+  outline: none;
+  width: 90%;
+}
+
+.close {
+  padding: 0;
+  margin: 0;
+  transform: translateY(100%);
+  font-size: 12px;
+  text-decoration: underline;
+}

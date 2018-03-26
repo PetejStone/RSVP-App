@@ -1,0 +1,44 @@
+form{
+  width: 75%;
+  max-width: 625px;
+  @extend %center;
+  background-color: darken($purple, 20%);
+  border-radius: 15px;
+  box-shadow: -2px 1px 4px $purple;
+  color: $white;
+  padding: 1em;
+  margin-bottom: 1em;
+  @include mq(medium) {
+    width: 90%;
+
+  }
+}
+
+fieldset {
+  border: none;
+  text-align: center;
+}
+
+label {
+  margin-right: .5em;
+}
+#name {
+  @include mq(medium){
+    margin-right: 1em;
+  }
+}
+
+#name,
+#party {
+  width: 100%;
+  @extend %center;
+  @include mq(medium) {
+    width: 35%;
+  }
+}
+
+#party {
+  @include mq(medium) {
+    width: 10%;
+  }
+}
