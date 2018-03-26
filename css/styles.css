@@ -529,6 +529,7 @@ aside {
   margin: 0;
   transform: translateY(100%);
   font-size: 12px;
-  text-decoration: underline; }
+  text-decoration: underline;
+  cursor: pointer; }
 
 /*# sourceMappingURL=styles.css.map */
