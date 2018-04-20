@@ -1,45 +1,26 @@
+
+
+
+const close = document.getElementsByClassName('close');
 const submit = document.querySelector("#submit");
 const form = document.getElementsByTagName("form");
 const name = document.querySelector("#name");
 const party = document.querySelector("#party");
 const formInput = document.querySelector('.formInput');
-// const main = document.querySelector("main");
+
 const toggle = document.querySelector(".toggle");
 const show= document.querySelector("#show");
 const hide = document.querySelector("#hide");
 const confirmedTotal = document.querySelector(".confirmed-total");
 const unconfirmedTotal = document.querySelector(".unconfirmed-total");
 const guestlistTotal = document.querySelector(".guestlist-total");
-const html = document.getElementsByTagName('html')[0];
-// const body = document.getElementsByTagName('body')[0];
-
-const toggleCheck = document.querySelectorAll('.checkbox');
-// const newGuest = document.getElementsByClassName('new-guest');
-const close = document.getElementsByClassName('close');
-const checkbox = document.getElementsByClassName("checkbox");
-
-
-// const guestListTotal = document.querySelector('.guestlist-total');
-// const body = document.getElementsByTagName('body')[0];
-// const newGuest = document.getElementsByClassName('new-guest');
-
-
-
+// const body = document.querySelector('body');
 let confirmedCounter = 0;
 show.style.display = 'none';
 
-// window.addEventListener('load', ()=>{
-//   body.innerHTML = localStorage.getItem("body");
-//
-// });
 
 
-//form functionlity
-
-
-
-window.addEventListener('DOMContentLoaded', ()=> {
-
+///Creates div cards for each name that is generated
 
 
 
@@ -56,14 +37,14 @@ window.addEventListener('DOMContentLoaded', ()=> {
       submit.style.backgroundColor = "#98949e";
       submit.style.cursor = 'default';
     }
-  });
+  })
 
 
 
 
 //Event listener to submit btn
 
-submit.addEventListener('click', (event)=> {
+submit.addEventListener('click', ()=> {
   event.preventDefault(); //prevent page reload
   const newGuest = document.createElement("DIV");  //create DIV element
   const h2 = document.createElement("H2"); //Add h2 element
@@ -111,7 +92,6 @@ submit.addEventListener('click', (event)=> {
 
   //checkbox toggle
   const toggleCheck = document.querySelectorAll('.checkbox');
-  localStorage.setItem('toggleCheck', "document.querySelectorAll('.checkbox')");
 
   for (let i=0; i < toggleCheck.length; i+=1) {
 
@@ -123,36 +103,37 @@ submit.addEventListener('click', (event)=> {
       document.querySelectorAll('input[type="checkbox"]:checked').length;
       unconfirmedTotal.innerHTML="Total Unconfirmed: "+ uncheckedTotal;
 
+
+
     })
+
+
 }
 
-// const close = document.getElementsByClassName('close');
-// localStorage.setItem('close', "document.getElementsByClassName('close')");
-//
-// for (let i=0; i < close.length; i++) {
-//   close[i].addEventListener('click', ()=> {
-//     event.target.parentElement.remove();
-//     let checkedTotal = document.querySelectorAll('input[type="checkbox"]:checked').length;
-//     confirmedTotal.innerHTML= "Total Confirmed: "+ checkedTotal;
-//
-//     let uncheckedTotal = document.querySelectorAll('.new-guest').length -
-//     document.querySelectorAll('input[type="checkbox"]:checked').length;
-//     unconfirmedTotal.innerHTML="Total Unconfirmed: "+ uncheckedTotal;
-//     guestlistTotal.innerHTML="Guestlist Total: "+ uncheckedTotal;
-//   })
-// }
 
+
+for (let i=0; i < close.length; i++) {
+  close[i].addEventListener('click', ()=> {
+    event.target.parentElement.remove();
+    localStorage.setItem("main", main.children.length) ;
+    let checkedTotal = document.querySelectorAll('input[type="checkbox"]:checked').length;
+    confirmedTotal.innerHTML= "Total Confirmed: "+ checkedTotal;
+
+    let uncheckedTotal = document.querySelectorAll('.new-guest').length -
+    document.querySelectorAll('input[type="checkbox"]:checked').length;
+    unconfirmedTotal.innerHTML="Total Unconfirmed: "+ uncheckedTotal;
+    guestlistTotal.innerHTML="Guestlist Total: "+ uncheckedTotal;
+    localStorage.setItem("body", body.innerHTML) ;
+  });
+}
 localStorage.setItem("body", body.innerHTML) ;
 localStorage.setItem("main", main.children.length) ;
- storage = true;
+
 })//end of event listener
 
-// const checkbox = document.getElementsByClassName("checkbox");
-// const newGuest = document.getElementsByClassName('new-guest');
-localStorage.setItem('checkbox', "document.getElementsByClassName('checkbox')");
-localStorage.setItem('newGuest', "document.getElementsByClassName('new-guest')");
-
-// let hidden = false;
+const checkbox = document.getElementsByClassName("checkbox");
+const newGuest = document.getElementsByClassName('new-guest');
+let hidden = false;
 //confirmed function
 
 
@@ -170,7 +151,6 @@ hide.addEventListener('click', ()=>{
 
 
 
-
 }) // end event listener
 
   show.addEventListener('click',()=> {
@@ -181,34 +161,18 @@ hide.addEventListener('click', ()=>{
     }
   });
 
-});
+  //--------
+  for (let i=0; i < close.length; i++) {
+    close[i].addEventListener('click', ()=> {
+      event.target.parentElement.remove();
+      localStorage.setItem("main", main.children.length) ;
+      let checkedTotal = document.querySelectorAll('input[type="checkbox"]:checked').length;
+      confirmedTotal.innerHTML= "Total Confirmed: "+ checkedTotal;
 
-
-//-------
-
-for (let i=0; i < toggleCheck.length; i+=1) {
-
-  toggleCheck[i].addEventListener('change',()=>{
-    let checkedTotal = document.querySelectorAll('input[type="checkbox"]:checked').length;
-    confirmedTotal.innerHTML= "Total Confirmed: "+ checkedTotal;
-
-    let uncheckedTotal = document.querySelectorAll('.new-guest').length -
-    document.querySelectorAll('input[type="checkbox"]:checked').length;
-    unconfirmedTotal.innerHTML="Total Unconfirmed: "+ uncheckedTotal;
-
-  })
-}
-
-
-for (let i=0; i < close.length; i++) {
-  close[i].addEventListener('click', (event)=> {
-    event.target.parentElement.remove();
-    let checkedTotal = document.querySelectorAll('input[type="checkbox"]:checked').length;
-    confirmedTotal.innerHTML= "Total Confirmed: "+ checkedTotal;
-
-    let uncheckedTotal = document.querySelectorAll('.new-guest').length -
-    document.querySelectorAll('input[type="checkbox"]:checked').length;
-    unconfirmedTotal.innerHTML="Total Unconfirmed: "+ uncheckedTotal;
-    guestlistTotal.innerHTML="Guestlist Total: "+ uncheckedTotal;
-  });
-}
+      let uncheckedTotal = document.querySelectorAll('.new-guest').length -
+      document.querySelectorAll('input[type="checkbox"]:checked').length;
+      unconfirmedTotal.innerHTML="Total Unconfirmed: "+ uncheckedTotal;
+      guestlistTotal.innerHTML="Guestlist Total: "+ uncheckedTotal;
+      localStorage.setItem("body", body.innerHTML) ;
+    });
+  }

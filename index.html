@@ -8,9 +8,10 @@
     <title>RSVP</title>
   </head>
   <body>
+
     <header>
       <h1>RSVP</h1>
-      <p>Make Organizing Your Event a Little Easier</p> 
+      <p>Make Organizing Your Event a Little Easier</p>
     </header>
 
     <form type="post" >
@@ -35,6 +36,23 @@
     <main>
       <!--JavaScript Generated Content   -->
     </main>
-    <script src="js/main.js"></script>
+    <script>
+      let main = document.getElementsByTagName("main")[0];
+      const body = document.querySelector('body');
+      let mainLength = parseInt(localStorage.main);
+      console.log(mainLength);
+      if (mainLength > 0) {
+        body.innerHTML = localStorage.getItem('body');
+        main = document.getElementsByTagName("main")[0];
+        console.log('loaded content');
+      }
+
+
+
+
+    </script>
+    <script src="js/main2.js"></script>
+
+
   </body>
 </html>
