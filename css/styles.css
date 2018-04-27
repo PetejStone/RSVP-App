@@ -503,6 +503,7 @@ header {
   height: 13em;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   border-radius: 15px; }
 
 .new-guest {

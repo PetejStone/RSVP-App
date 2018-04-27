@@ -15,7 +15,7 @@ header {
   background-size: cover;
   background-position: 50% 43%;
   height: 13em;
-  @include flexy(flex, column, null);
+  @include flexy(flex, column, null, center);
   border-radius: 15px;
 }
 
