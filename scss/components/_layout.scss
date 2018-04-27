@@ -2,8 +2,9 @@ body {
   background-color: #333333;
 }
 main {
-  @include flexy(flex, row, null, space-between) {
+  @include flexy(flex, row, null) {
     flex-wrap: wrap;
+
   }
 }
 
@@ -14,7 +15,7 @@ header {
   background-size: cover;
   background-position: 50% 43%;
   height: 13em;
-  @include flexy(flex, column, null, center);
+  @include flexy(flex, column, null);
   border-radius: 15px;
 }
 
@@ -26,7 +27,8 @@ header {
   font-family: $helvetica-font-stack;
   text-align: center;
   @extend %center;
-  margin-top: 2em;
+  margin: 5px;
+  margin-top: 1em;
 }
 
 input {
@@ -37,6 +39,7 @@ aside {
   color: #fff;
   outline: none;
   width: 90%;
+  margin-left: 1em;
 }
 
 .close {
